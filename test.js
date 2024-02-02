@@ -1,4 +1,4 @@
-const readlineSync = require('readline-sync');
+// const readlineSync = require('readline-sync');
 
 const width = 50;
 const height = 30;
