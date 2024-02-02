@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Calculator</title>
+
+</head>
+<body>
+
+    
+
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput"  placeholder="Enter a  integer">
+    <button onclick="getFib()">Calculate Fibonacci</button>
+
+    <p id="result"></p>
+
+    <script>
+        function getFib() {
+            
+            let userInput = document.getElementById("numberInput").value;
+
+            
+            if (!userInput || userInput < 0 || userInput % 1 !== 0 ) {
+                alert("Please enter a non-negative integer.");
+                return;
+            }
+
+            
+            let result = [0, 1];
+            for (let i = 2; i < userInput; i++) {
+                result.push(result[i-1]+result[i-2])
+            }
+            let index = result.length
+          
+            document.getElementById("result").innerHTML = "Fibonacci sequence: " +result[index-1] ;
+        }
+    </script>
+
+</body>
+</html>
