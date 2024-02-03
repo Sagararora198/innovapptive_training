@@ -1,2 +1,12 @@
-01/02/2024
+02/02/2024
 
+What is browser , Internet ,client ,server , http , port , dns , router
+
+how communication is done -
+https://medium.com/codex/how-http-packets-travel-through-internet-9fd447f90bb3
+
+browser is an appication which act as a http client 
+webpage and webapplication both are different
+
+the runtime of chrome(chromium) is same as node . 
+javascript does not allow constructor overloading
