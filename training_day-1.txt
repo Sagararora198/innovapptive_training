@@ -10,3 +10,60 @@ webpage and webapplication both are different
 
 the runtime of chrome(chromium) is same as node . 
 javascript does not allow constructor overloading
+
+----------------------------------------------------------------
+05/05/2024
+how integer number is represent 
+if we normally try to put all intgeres by using a sign bit then the range will be 0 to maximum and -0 to minimum but there is no -0 so therefore we take 2's compliment to shift the origin in negative side so range will be -1 to minimum 
+for example a 3 bit representation with a sign bit
+0 000 - 0
+0 001 - 1
+0 010 - 2
+0 011 - 3
+0 100 - 4
+0 101 - 5
+0 110 - 6
+0 111 - 7
+
+(2's complement)
+1 000 - -8
+1 001 - -7
+1 010 - -6
+1 011 - -5
+1 100 - -4
+1 101 - -3
+1 110 - -2
+1 111 - -1
+
+1] getSimple2scomplement(Number,Number:length) return array(of 0s and 1s)
+2] getSimpleDecimalFrom2sComplement(Array[]) return Number
+3] getJSNumberRepresentation(Number)    52bit
+4] getNumericFromJSRepresentation(Array[] 52bit) return Number
+
+
+HTML -
+pre preformatted text - represent excatly as written
+bdi - tells the browser bidirectional algorithm to treat the text it contain in isolation from its surrounding text
+kbd - represent span of inline text denoting textual user input from keyboard 
+mark - highlight
+ruby - used for showing pronunciation- rp,rt
+s - strikethrough
+map - used with area elements to define an image map (clickable link area)
+
+
+ 
+CSS -
+inline block (display of dev is block, span is inline)
+selector
+float and clear
+position (relative,absolute,sticky,fixed)
+visibility
+z-index
+flexbox 
+em - size relative to parent
+rem -size relative to base htlm/root
+vh and vw (view height and view width) size of whole browser
+transition , animation , keyframe
+grid
+
+ 
