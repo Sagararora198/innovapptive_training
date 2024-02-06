@@ -175,52 +175,71 @@ function subtractArray(firstArray,secondArray){
     let minArray = []
     let resultant = []
     let carry =0
-    
+    let condition = 0
+    if(firstArray[0]=='-' ){
+        firstArray.shift()
+        condition = -1
+
+    }
+    else if(secondArray[0]=='-'){
+        secondArray.shift()
+        condition = 1
+    }
 
     //check for input and also which array is maximum or minimum
     let sign = takeInput(firstArray,secondArray,maxArray,minArray)
+    if(condition==0){
 
-    
-    //using 2 pointer approch
-    let maxArrayPointer = maxArray.length -1
-    let minArrayPointer = minArray.length -1
-    // taking a carry which will add to the next number 
-    // if number is smaller then it will add 10 to it so subtraction
-    while(minArrayPointer>=0){
-        if(minArray[minArrayPointer]>(maxArray[maxArrayPointer]+carry)){
-            maxArray[maxArrayPointer] = 10 + (maxArray[maxArrayPointer]+carry)
-            carry = -1
-            resultant.unshift(maxArray[maxArrayPointer]-minArray[minArrayPointer])
-            
-            
-
+        
+            //using 2 pointer approch
+            let maxArrayPointer = maxArray.length -1
+            let minArrayPointer = minArray.length -1
+            // taking a carry which will add to the next number 
+        // if number is smaller then it will add 10 to it so subtraction
+        while(minArrayPointer>=0){
+            if(minArray[minArrayPointer]>(maxArray[maxArrayPointer]+carry)){
+                maxArray[maxArrayPointer] = 10 + (maxArray[maxArrayPointer]+carry)
+                carry = -1
+                resultant.unshift(maxArray[maxArrayPointer]-minArray[minArrayPointer])
+                
+                
+                
+            }
+            else{
+                resultant.unshift(((maxArray[maxArrayPointer]+carry)-minArray[minArrayPointer]))
+                carry = 0
+            }
+            minArrayPointer--
+            maxArrayPointer--
         }
-        else{
-            resultant.unshift(((maxArray[maxArrayPointer]+carry)-minArray[minArrayPointer]))
-            carry = 0
+        // for remaining element
+        for(let i=maxArrayPointer;i>=0;i--){
+            if(carry+maxArray[i]>=0){
+                resultant.unshift(carry+maxArray[i])
+                carry = 0
+                
+            }
+            else{
+                resultant.unshift(9)
+            }
         }
-        minArrayPointer--
-        maxArrayPointer--
+        // for removing leading zeros
+        
+        while(resultant[0]==0){
+            resultant.shift()
+        }
+        if(sign == -1){
+            resultant.unshift("-")
+        }
     }
-    // for remaining element
-    for(let i=maxArrayPointer;i>=0;i--){
-        if(carry+maxArray[i]>=0){
-            resultant.unshift(carry+maxArray[i])
-            carry = 0
-
-        }
-        else{
-            resultant.unshift(9)
-        }
-    }
-    // for removing leading zeros
-    
-    while(resultant[0]==0){
-        resultant.shift()
-    }
-    if(sign == -1){
+    else if(condition==-1){
+        resultant = addArray(firstArray,secondArray)
         resultant.unshift("-")
     }
+    else{
+        resultant = addArray(firstArray,secondArray)
+    }
+
     return resultant
 
 
@@ -240,6 +259,22 @@ function subtractArray(firstArray,secondArray){
  */
 function multiplication(firstArray,secondArray){
     let resultant = []
+    let condition = 0
+    if(firstArray[0]=='-' && secondArray[0]=='-'){
+        condition = 0
+        firstArray.shift()
+        secondArray.shift()
+    }
+    else if(firstArray[0]=='-'){
+        condition = -1
+        firstArray.shift()
+    }
+    else if(secondArray[0]=='-'){
+        condition = -1
+        secondArray.shift()
+    }
+
+    
     takeInput(firstArray,secondArray)
     let lengthOfArray = 0
     let numberFromArray = 0
@@ -253,7 +288,9 @@ function multiplication(firstArray,secondArray){
 
         resultant = addArray(resultant,firstArray)
     }
-
+    if(condition==-1){
+        resultant.unshift('-')
+    }
 
 
     return resultant
@@ -273,6 +310,6 @@ function multiplication(firstArray,secondArray){
 // }
 console.log(addArray([1,9,2,4],[4,5,6]));
 
-console.log(subtractArray([1,0,0,0],[9,9,9,9,1]));
+console.log(subtractArray([1,0,0,0],['-',9,9,9,9,1]));
 
-console.log(multiplication([1,2,3],[2,1,2]));
+console.log(multiplication(['-',1,2,3],['-',2,1,2]));
