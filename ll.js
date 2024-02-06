@@ -15,6 +15,8 @@ class LinkedList{
         this.head = null 
         this.size = 0
     }
+
+
     /** push an element at the end of link list
      * 
      * @param {Number} element  value to insert
@@ -34,6 +36,8 @@ class LinkedList{
         }
         this.size++
     }
+
+
     /** push element at specified location
      * 
      * @param {Number} index index to insert the value at
@@ -73,6 +77,8 @@ class LinkedList{
         }
 
     }
+
+
     /** to perform pop
      * 
      * @returns {Number}  poped element
@@ -98,6 +104,8 @@ class LinkedList{
         }
 
     }
+
+
     /** remove by value from a linklist
      
      * @param {Number} element value you want to remove
@@ -125,6 +133,8 @@ class LinkedList{
         }
         
     }
+
+
     /** to pop by index
      * 
      * @param {Number} index index at which you want pop operation
@@ -150,6 +160,8 @@ class LinkedList{
         prev.next = curr.next
         this.size--
     }
+
+
     /** search for element in linklist
      
      * @param {Number} element  value you want to search
@@ -173,6 +185,7 @@ class LinkedList{
         return false
     }
 
+    
     // to print the linked list 
     /**prints a link list
      */
@@ -207,49 +220,3 @@ ll.removeLast()
 ll.print()
 ll.removeAt(2)
 ll.print()
-const readline = require('readline');
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-function getUserInput() {
-  rl.question('Enter a number (1-5): ', (answer) => {
-    handleUserInput(answer);
-  });
-}
-
-function handleUserInput(input) {
-  switch (input) {
-    case '1':
-      console.log('You entered 1');
-      ll.add()
-      getUserInput();
-      break;
-    case '2':
-      console.log('You entered 2');
-      ll.remove()
-      getUserInput();
-      break;
-    case '3':
-      console.log('You entered 3');
-      ll.size()
-      getUserInput();
-      break;
-    case '4':
-      console.log('You entered 4');
-      getUserInput();
-      break;
-    case '5':
-      console.log('You entered 5. Exiting...');
-      rl.close();
-      break;
-    default:
-      console.log('Invalid input. Please enter a number between 1 and 5.');
-      getUserInput();
-  }
-}
-
-getUserInput();
-

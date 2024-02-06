@@ -1,3 +1,14 @@
+/*
+* We have to create 4 main functions 
+* 1] getSimple2sComplement
+* 2] getSimpleDecimalFrom2sComplement
+* 3] getJSNumberRepresentation
+* 4] getNumericFromJSRepresentation
+*/
+
+
+
+
 /** Convert the number into its binary representation 
  * @param {Number} value decimal number to convert
  * @param {Number} digit length of bits to prepresent
@@ -11,6 +22,9 @@ function giveBinary(value,digit){
         arr.unshift(value%2)
         value = Math.floor(value/2)
 
+    }
+    if(digit=undefined){
+        return arr
     }
     let remainingLength = digit-arr.length
     for(let i=0;i<remainingLength;i++){
@@ -109,11 +123,47 @@ function getSimpleDecimalFrom2sComplement(binary){
 }
 
 
+/**
+ * 
+ * @param {Number} value Decimal number  
+ * @returns {[]} splitted array of decimal number
+ */
+function splitNumberFromRadixPoint(value){
+    let integerPart = Math.floor(value)
+    let decimalPart = value-integerPart
+    return [integerPart,decimalPart]
+}
+
+// console.log(splitNumberFromRadixPoint(3.143));
+
+
+
+
 /**Convert decimal number to JS number representation
  * 
  * @param {Number} value decimal number 
  */
 function getJSNumberRepresentation(value){
+    if(Math.sign(value)==0){
+
+    }
+    else{
+        // first split the number from radix point 
+        // then calculate the binary of each part separatly
+        // merge and convert it into normal form
+        let splitted = splitNumberFromRadixPoint(value)
+
+        // for left part
+        let leftPart = giveBinary(splitted[0])
+
+        // for right part
+        
+
+        
+
+
+    }
+    
 
 }
 
