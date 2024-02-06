@@ -5,7 +5,7 @@ const height = 30;
 /**
  * 
  * @param {Number} ms miliseconds of delay 
- * @returns {Prom}
+ * @returns {Promise}
  */
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));

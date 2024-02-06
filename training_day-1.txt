@@ -66,4 +66,10 @@ vh and vw (view height and view width) size of whole browser
 transition , animation , keyframe
 grid
 
+
+
+
+input one array of any length 
+another array of size 2 or 3 
+return arithmatic operations 
  
