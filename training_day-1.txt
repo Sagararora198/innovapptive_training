@@ -59,7 +59,7 @@ float and clear
 position (relative,absolute,sticky,fixed)
 visibility
 z-index
-flexbox 
+flexbox - justify-content(main-axis) , align-items(cross-axis),align-self(particular) , order(particular), flex-wrap,align-content( when there are multiple lines)
 em - size relative to parent
 rem -size relative to base htlm/root
 vh and vw (view height and view width) size of whole browser

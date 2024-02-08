@@ -1,0 +1,64 @@
+<!-- task is to create a box inside the window of size x/2 , x/2 
+    the box will have color black
+    and the window will have white as background color 
+ -->
+
+ <!-- first create a box using div  -->
+ <!-- to  achieve the size half i will use vh and vw in size -->
+  <!-- now center the div using margin auto properity  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Assignment</title>
+</head>
+<style>
+
+    body{
+        background-color: white;
+
+
+    }
+    #myDiv{
+        color: white;
+        text-align: center;
+        background-color: black;
+        /* display: inline-block; */
+        height: 50vh;
+        width: 50vw;
+        margin: 25vh auto ;
+        
+    }
+    #screen{
+        color: black;
+    }
+
+
+</style>
+<body>
+    <!-- screen div is used to manipulate the innerHTML inside it to 
+    to display the size of window -->
+    <div id="screen"></div>
+
+    <!-- myDiv is the centered div  -->
+    <div id="myDiv"></div>
+
+
+    <script>
+        // checking if the div is actually of half height and width or not
+        let height = window.innerHeight
+        let width = window.innerWidth
+        console.log(height);
+        console.log(width);
+        
+        let offsetHeight = document.getElementById('myDiv').offsetHeight;
+        let offsetWidth = document.getElementById('myDiv').offsetWidth
+        console.log(offsetHeight);
+        console.log(offsetWidth);
+        document.getElementById("myDiv").innerHTML = "Height of div is: " + offsetHeight + " and width of div is: " + offsetWidth
+        document.getElementById("screen").innerHTML = "Height of div is: " + height + " and width of div is: " + width
+
+    </script>
+</body>
+</html>

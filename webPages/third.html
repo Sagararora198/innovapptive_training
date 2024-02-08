@@ -1,0 +1,81 @@
+ <!-- task is to create a webpage with following elements
+ 1] navbar - fixed size (#b1 color)
+ 2] aside - 1/4 width (#b2)
+ 3] main - 1/2 width (#b3)
+ 4] aside - 1/4 width (#b4)
+ 5] footer - fixed size (#b5)
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Assignment</title>
+</head>
+<style>
+    /* for extra margin and padding which the browser adds  */
+    /* declare a variable for fixed length of navbar and footer  */
+    * {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        --height:30px
+
+        
+    }
+
+
+    .navbar{
+        background-color: rgb(0, 0, 80);
+        height: var(--height);
+        width: 100vw;
+
+    }
+    .section {
+        display: flex;
+    }
+    .aside{
+        background-color: rgb(2, 2, 136);
+        
+        height: calc(100vh - (2*var(--height)));
+        width:calc(100vw/4);
+    }
+    .main{
+        background-color: rgb(0, 0, 156);
+        
+        height: calc(100vh - (2*var(--height)));
+        
+        width: calc(100vw/2);
+    }
+    .secondAside{
+        background-color: rgb(0, 0, 193);
+        
+        height: calc(100vh - (2*var(--height)));
+        
+        width: calc(100vw/4);
+
+    }
+    .footer{
+        background-color: rgb(0, 0, 245);
+        height: var(--height);
+        width: 100vw;
+    }
+
+</style>
+
+<body>
+    <!-- body will have all the components  -->
+    <nav class="navbar"></nav>
+    <section class="section">
+        <aside class="aside"></aside>
+        <main class="main"></main>
+        <aside class="secondAside"></aside>
+    </section>
+
+    <footer class="footer"></footer>
+
+</body>
+
+</html>

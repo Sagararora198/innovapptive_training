@@ -1,0 +1,413 @@
+<!-- task is to clone a codepen tamplet of instagram 
+link - https://codepen.io/The-Accolade/pen/BaNGdMj 
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .mainHeader {
+        background-color: black;
+        width: 100vw;
+        height: 53px;
+    }
+
+    .middleBody {
+        display: flex;
+
+    }
+
+    .instagramClone {
+        background-color: white;
+        width: 928px;
+        height: calc(100vh - 73px);
+    }
+
+    .codePallet {
+        background-color: black;
+        width: 438px;
+        height: calc(100vh - 73px)
+    }
+
+    .footer {
+        background-color: #1D1E22;
+        display: flex;
+        width: 100vw;
+        height: 20px;
+        
+    }
+
+    .mainHeader>.navbar {
+        color: white;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .mainHeader>.navbar>div {
+        border: 1px;
+
+    }
+
+    .codeBody {
+        width: 400px;
+        background-color: grey;
+        height: calc(100vh - 73px);
+        position: absolute;
+        right: 0%;
+        display: flex;
+        flex-direction: column;
+       
+
+
+    }
+    
+
+    .codeBody>div {
+        height: 191px;
+        border: 2px solid black;
+
+    }
+
+
+
+    .middleBody>.instagramClone>.instagramNavbar {
+        display: flex;
+        background-color: rgb(228, 255, 255);
+        height: 40px;
+        align-items: center;
+        justify-content: space-between;
+
+
+
+    }
+
+    .navbar>.titleAndName {
+        width: 844px;
+    }
+
+    .navbar>.heart,.setting,
+    .list,
+    .signin,.signup{
+        
+        font-size: 22px;
+        border-radius: 6px;
+        background-color: #5A5F73;
+        width: 56px;
+        height: 38px;
+        text-align: center;
+        margin-left: 7px;
+        margin-right: 7px;
+        padding-top: 7px;
+        margin-top: -10px;
+        padding-top: 9px;
+    } 
+    .signup{
+        background-color: #248C46;
+        color: black;
+        font-size: medium;
+        text-align: center;
+        
+    }
+    .navbar>.setting {
+        display: flex;
+        text-align: center;
+        width: 100px;
+
+    }
+
+    .signup,.signin{
+        width: 90px;
+    }
+    .setting>.settingText{
+        text-align: center;
+    
+        margin-left: -3px;
+        font-size: 18px;
+        padding-left: 2px;
+        margin-top: -3px;
+    }
+    .setting>.settinglogo{
+        margin: auto;
+        margin: -4px 3px 2px 2px
+        /* text-align: center; */
+    }
+
+    
+
+
+    .instagramNavbar>div {
+        margin: 10px;
+        width: 186px;
+        height: 32px;
+        
+    }
+    .sidebuttons{
+        margin-right: 10px;
+    }
+    .instagramNavbar .search{
+        width: 227px;
+        text-align: center;
+        font-size: small;
+        height: 27px;
+    }
+    .instagramNavbar .material-icons{
+        color: #4a4e5c;
+        font-size: 30px;
+    }
+
+
+    .material-icons {
+        color: rgba(255, 255, 255, 1);
+    }
+    .logo{
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+        margin-left: 10px;
+    }
+    .logo>svg{
+        fill: white;
+        width: 30px;
+        height: 30px;
+    }
+    .titleAndName{
+        display: flex;
+        flex-direction: column;
+        margin-left: 7px;
+    }
+    .titleAndName>.title{
+        font-family: 'Lucida Grande' , 'Lucida Sans Unicode', 'Tahoma','sans-serif';
+        font-size: 20px;
+        font-weight: 700;
+        height: 26px;
+        color: #ffffff;
+    }
+    .titleAndName>.name{
+        color: #C1C1C1;
+    }
+    .nameAndFollow{
+        display: flex;
+        
+    }
+    .nameAndFollow>.follow{
+        display: flex;
+        margin:5px;
+        background-color: #248C46;
+        border: 2px solid transparent;
+        font-size: small;
+        margin-top: 0px;
+    }
+    .nameAndFollow>.follow>.followLogo{
+        margin-top: 0px;
+        font-size: large;
+        color: black;
+    }
+    .follow>.followText{
+        color: black;
+    }
+    
+    .html{
+        display: flex;
+        flex-direction: column;
+    }
+    .header{
+        height: 30px;
+        background-color: black;
+    }
+    .code{
+        height: 156px;
+        background-color: #1D1E22;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .header>.codeheader{
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        background-color: #1D1E22;
+        width: 88px;
+        border-top: 1.5px solid wheat;
+        border-bottom: 1px solid black;
+        margin-top: 4px;
+
+    }
+
+
+   
+    .headerlogo{
+        background-color: #FF3C41;
+        width: 21px;
+        height: 19px;
+        text-align: center;
+        border-radius: 3px;
+        margin-top: 2px;
+    }
+    .css .headerlogo{
+        background-color: #0EBEFF;
+    }
+    .javascript .headerlogo{
+        background-color: #FCD000;
+    }
+    .css .codeheader{
+        width:78px
+    }
+    .javascript .codeheader{
+        width: 55px;
+    }
+    .codePallet .material-icons{
+        color: white;
+        font-size: medium;
+    }
+    .codePallet .sidetools{
+        margin-top: 11px;
+        margin-right: 11px;
+    }
+    .codePallet .sidetools div{
+        background-color: #5A5F73;
+        border-radius: 2px;
+        width: 23px;
+        text-align: center;
+    }
+</style>
+
+<body>
+
+    <!-- adding the html eliments by looking at the site  -->
+    <header class="mainHeader">
+        <nav class="navbar">
+            <div class="logo">
+                <svg viewbox="0 0 100 100">
+                <path d="M100 34.2c-.4-2.6-3.3-4-5.3-5.3-3.6-2.4-7.1-4.7-10.7-7.1-8.5-5.7-17.1-11.4-25.6-17.1-2-1.3-4-2.7-6-4-1.4-1-3.3-1-4.8 0-5.7 3.8-11.5 7.7-17.2 11.5L5.2 29C3 30.4.1 31.8 0 34.8c-.1 3.3 0 6.7 0 10v16c0 2.9-.6 6.3 2.1 8.1 6.4 4.4 12.9 8.6 19.4 12.9 8 5.3 16 10.7 24 16 2.2 1.5 4.4 3.1 7.1 1.3 2.3-1.5 4.5-3 6.8-4.5 8.9-5.9 17.8-11.9 26.7-17.8l9.9-6.6c.6-.4 1.3-.8 1.9-1.3 1.4-1 2-2.4 2-4.1V37.3c.1-1.1.2-2.1.1-3.1 0-.1 0 .2 0 0zM54.3 12.3 88 34.8 73 44.9 54.3 32.4V12.3zm-8.6 0v20L27.1 44.8 12 34.8l33.7-22.5zM8.6 42.8 19.3 50 8.6 57.2V42.8zm37.1 44.9L12 65.2l15-10.1 18.6 12.5v20.1zM50 60.2 34.8 50 50 39.8 65.2 50 50 60.2zm4.3 27.5v-20l18.6-12.5 15 10.1-33.6 22.4zm37.1-30.5L80.7 50l10.8-7.2-.1 14.4z"></path>
+            </svg>
+            </div>
+            <div class="titleAndName">
+                <div class="title">instagram clone</div>
+                <div class="nameAndFollow">
+
+                    <div class="name">Kolade Olusola</div>
+                    <div class="follow">
+                        <div class="followLogo , material-icons">add</div>
+                        <div class="followText">Follow</div>
+                    </div>
+                </div>
+                </div>
+            <!-- <div class="follow">follow</div> -->
+            <div class="heart material-icons"> favorite</div>
+            <div class="setting">
+                <div class="settinglogo material-icons">settings</div>
+                <div class="settingText">Setting</div>
+            </div>
+            <div class="list material-icons">space_dashboard</div>
+            <div class="signup">Sign Up </div>
+            <div class="signin">Log In </div>
+
+        </nav>
+    </header>
+
+    <div class="middleBody">
+        <main class="instagramClone">
+            <iframe src="./forth2.html" width="100%" height="500" frameborder="0"></iframe>
+            <!-- <div class="instagramNavbar">
+                <div class="logoInsta">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="logo" width="103">
+                </div>
+                    <input type="text" class="search material-icons" placeholder="&#xe8b6; " >
+                    <div class="sidebuttons">
+
+                        <div class="homebutton material-icons">home</div>
+                        <div class="navigatebutton material-icons">explore</div>
+                        <div class="searchbar material-icons">favorite</div>
+                    
+                    </div>
+            </div>
+            <div class="instagramBody">
+
+            </div> -->
+        </main>
+        <aside class="codePallet">
+            < class="codeBody">
+                <div class="html">
+                    <div class="header">
+                        <div class="codeheader">
+                            <div class="headerlogo ">/</div>
+                            <div class="headertext">HTML</div>
+                        </div>
+                        <div class="sidetools">
+
+                            <div class="headersetting material-icons">settings</div>
+                            <div class="headernavigation material-icons">expand_more</div>
+                        </div>
+                    </div>
+                    <div class="code"></div>
+                </div>
+                <div class="css">
+                    <div class="header">
+                        <div class="codeheader">
+                            <div class="headerlogo ">*</div>
+                            <div class="headertext">CSS</div>
+                        </div>
+                        <div class="sidetools">
+
+                            <div class="headersetting material-icons">settings</div>
+                            <div class="headernavigation material-icons">expand_more</div>
+                        </div>
+                    </div>
+                    <div class="code"></div>
+                </div>
+                    
+                
+                <div class="javascript">
+                    <div class="header">
+                        <div class="codeheader">
+                            <div class="headerlogo ">()</div>
+                            <div class="headertext">JS</div>
+                        </div>
+                        <div class="sidetools">
+
+                            <div class="headersetting material-icons">settings</div>
+                            <div class="headernavigation material-icons">expand_more</div>
+                        </div>
+                    </div>
+                    <div class="code"></div>
+                </div>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+    <footer class="footer">
+        <div class="footernavbar">
+            <div class="leftPart">
+
+                <div class="console"></div>
+                <div class="assets"></div>
+                <div class="comments"></div>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

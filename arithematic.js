@@ -12,11 +12,14 @@
 function checkArrayElement(arrayInput, length) {
     // loop through array and check if each element is number and less then 9
     for (let i = 0; i < length; i++) {
-        if (typeof arrayInput[i] != "number" || arrayInput[i] > 9) {
-            throw new Error("Value should be a number and less then 9")
+        if (typeof arrayInput[i] != "number") {
+            throw new Error("Value should be a number ")
         }
         else if (arrayInput[i] % 1 != 0) {
             throw new Error("Only integer should be passed")
+        }
+        else if (arrayInput[i] > 9) {
+            throw new Error("Number cannot be greater then 9")
         }
     }
 
@@ -178,7 +181,7 @@ function addArray(firstArray, secondArray) {
 function subtractArray(firstArray, secondArray) {
     // maxArray will store the maximum number of two array
     // minArray will store the minimum number of two array
-    
+
     let maxArray = []
     let minArray = []
 
@@ -188,8 +191,8 @@ function subtractArray(firstArray, secondArray) {
     //check for input and also which array is maximum or minimum
     // sign represent if we are subtracting a larger number from smaller number
     let sign = takeInput(firstArray, secondArray, maxArray, minArray)
-    
-    
+
+
     // to store the carry value after subtraction 
     let carry = 0
     //using 2 pointer approch
@@ -259,9 +262,9 @@ function multiplication(firstArray, secondArray) {
     //find the integer number from second array
     let lengthOfArray = 0
     let numberFromArray = 0
-    if(secondArray.length>7){
-        throw new Error("Number too large cannot perform such long operation."+
-        "Optimised function in progress")
+    if (secondArray.length > 7) {
+        throw new Error("Number too large cannot perform such long operation." +
+            "Optimised function in progress")
     }
     while (lengthOfArray != (secondArray.length)) {
         numberFromArray = numberFromArray * 10 + secondArray[lengthOfArray]
@@ -390,31 +393,28 @@ function doArithmeticOperation(firstArray, secondArray, arithmeticOperation) {
  * @param {[]} secondArray input array 2
  * @returns {[]} resultant array after division
  */
-function division(firstArray,secondArray){
+function division(firstArray, secondArray) {
 
     return []
 }
 
 try {
-    
-    doArithmeticOperation([1,9,2,4],[4,5,6],'+')
-    
-    doArithmeticOperation([1,2,3,4],[1,2,3],'-')
-    
-    doArithmeticOperation([1,0,0,0],[9,9,9,9,1],'-')
-    
-    doArithmeticOperation(['-',1,2,3,4],['-',1,2,3],'-')
-    
-    doArithmeticOperation([1,2,3,4],[1,2,3],'*')
-    
-    doArithmeticOperation([1,2,3,4],[1,2,3],'+')
+
+    doArithmeticOperation([1, 9, 2, 4], [4, 5, 6], '+')
+
+    doArithmeticOperation([1, 2, 3, 4], [1, 2, 3], '-')
+
+    doArithmeticOperation([1, 0, 0, 0], [1], '-')
+
+    doArithmeticOperation(['-', 1, 2, 3, 4], ['-', 1, 2, 3], '-')
+
+    doArithmeticOperation([1, 2, 3, 4], [1, 2, 3], '*')
+
+    doArithmeticOperation([1, 2, 3, 4], [1, 2, 3], '+')
 } catch (error) {
     console.log(error);
-    
+
 }
-
-
-
-function newMultiplication(firstArray,secondArray){
-
+finally {
+    console.log("Done with the program");
 }

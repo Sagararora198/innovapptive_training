@@ -128,7 +128,7 @@ function getSimple2sComplement(inputDecimalNumber, lengthOfOutput) {
 	}
 
 }
-// console.log(getSimple2sComplement(-3,4));
+// console.log(getSimple2sComplement(-12,11));
 
 /**Convert binary to decimal
  * 
@@ -144,23 +144,24 @@ function convertToDecimal(inputBinaryArray) {
 	}
 	return sum
 }
-console.log(getSimpleDecimalFrom2sComplement([1,0,1,1]));
+// console.log(getSimpleDecimalFrom2sComplement([1,0,1,1]));
+
 /** Convert the binary into Decimal number by performing 2's complement
- *  @param {[]} binary binary array
+ *  @param {[]} inputBinaryArray binary array
  * @returns {Number} decimal representation
  * @throws 
  */
-function getSimpleDecimalFrom2sComplement(binary) {
+function getSimpleDecimalFrom2sComplement(inputBinaryArray) {
 	// check if the number is negative by it's MSB
-	if (binary[0] == 0) {
+	if (inputBinaryArray[0] == 0) {
 
-		return convertToDecimal(binary)
+		return convertToDecimal(inputBinaryArray)
 	}
 	// if negative then first perform 2's complement and return negative number
 	else {
-		give2sComplement(binary)
+		give2sComplement(inputBinaryArray)
 
-		return -convertToDecimal(binary)
+		return -convertToDecimal(inputBinaryArray)
 
 
 	}
@@ -173,7 +174,7 @@ function getSimpleDecimalFrom2sComplement(binary) {
  */
 function puransTesting() {
 
-	console.log(getHumanReadableArray(giveBinary(127, 10)))
+	// console.log(getHumanReadableArray(giveBinary(127, 10)))
 	// console.log(giveBinary(1, 11))
 	// console.log(giveBinary(2, 11))
 	// console.log(giveBinary(3, 52))
@@ -182,46 +183,97 @@ function puransTesting() {
 	// console.log(giveBinary(127, 1))
 }
 
-/**
+/**Will take any decimal number and split it from radix point
  * 
- * @param {Number} value Decimal number  
+ * @param {Number} inputDecimalNUmber Decimal number  
  * @returns {[]} splitted array of decimal number
  */
-function splitNumberFromRadixPoint(value) {
-	let integerPart = Math.floor(value)
-	let decimalPart = value - integerPart
-	return [integerPart, decimalPart]
+function splitNumberFromRadixPoint(inputDecimalNUmber) {
+	let stringFromatNumber = inputDecimalNUmber.toString()
+	let splittedNumberArray = stringFromatNumber.split('.')
+	splittedNumberArray[1] = "0." + splittedNumberArray[1]
+	for(let i=0;i<splittedNumberArray.length;i++){
+		splittedNumberArray[i] = parseFloat(splittedNumberArray[i])
+	}
+	return splittedNumberArray
 }
 
-// console.log(splitNumberFromRadixPoint(3.143));
+// console.log(splitNumberFromRadixPoint(3));
 
 
+
+
+/**
+ * 
+ * @param {Number} inputFloatNumber decimal number after radix point
+ * @returns {[Number]} array of number representating binary 
+ */
+function handelAfterRadixPointNumber(inputFloatNumber){
+
+	// while the number not become 1 or after some iterations 
+	// multiply by 2 and check for the floor part and append in resultant
+	iterationCount = 0
+	resultant = []
+	while(inputFloatNumber!=1 && iterationCount!=10){
+		inputFloatNumber = inputFloatNumber * 2
+		resultant.push(Math.floor(inputFloatNumber))
+		if(inputFloatNumber>1){
+			inputFloatNumber = inputFloatNumber -1
+		}
+		iterationCount++
+
+	}
+	return resultant
+}
 
 
 /**Convert decimal number to JS number representation
  * 
- * @param {Number} value decimal number 
+ * @param {Number} inputDeciamlNumber decimal number 
  */
-function getJSNumberRepresentation(value) {
-	if (Math.sign(value) == 0) {
-
+function getJSNumberRepresentation(inputDeciamlNumber) {
+	// check if number is negative 
+	// if negative make number positive and store a flag for future
+	let flag = 0
+	if (Math.sign(inputDeciamlNumber) == -1) {
+		flag = -1
 	}
-	else {
+	
 		// first split the number from radix point 
 		// then calculate the binary of each part separatly
 		// merge and convert it into normal form
-		let splitted = splitNumberFromRadixPoint(value)
+		let splitted = splitNumberFromRadixPoint(inputDeciamlNumber)
 
 		// for left part
-		let leftPart = giveBinary(splitted[0])
+		let beforeRedixPointNumber = giveBinary(splitted[0])
 
 		// for right part
+		let afterRadixPointNumber = handelAfterRadixPointNumber(splitted[1])
+
+		// add padding to the beforeRedixPoint
+		//TODO: this length should be updated afterwards only for testing now
+		for(let i=0;i<4;i++){
+			beforeRedixPointNumber.unshift(0)
+		}
+		// store the length of beforeRadixPointNumber so that we know where to add '.'
+		let lengthTillRadixPoint = beforeRedixPointNumber.length
+
+		// combined the array so that i can do 2's complementary
+		let combinedBinaryNumber = [...beforeRedixPointNumber,...afterRadixPointNumber]
+		if(flag == -1){
+			combinedBinaryNumber = give2sComplement(combinedBinaryNumber)
+		}
+
+		// now check for leading one 
+
+		
+
+		return combinedBinaryNumber
+		
+		
 
 
-
-
-
-	}
+	
 
 
 }
@@ -230,3 +282,5 @@ function getJSNumberRepresentation(value) {
 // let arr = getSimple2sComplement(-4,11)
 // console.log(getSimpleDecimalFrom2sComplement(arr));
 // puransTesting()
+
+console.log(getJSNumberRepresentation(3.14));
