@@ -1,12 +1,4 @@
-/* This is my first implementation of the Jugnu program.
- * The requirement was to print a 30 by 50 grid with only one random place
- * being populated by a '*' character and the rest of them spaces. 
- * Then the requirement was to move this * character randomly in either of 
- * the 9 possible directions. Also note that the "Jugnu" should not go
- * outside of the bounds of 30 and 50.
- */
 
-// declaring some consts
 const WIDTH = 50
 const HEIGHT = 30
 const DEFAULT_CHARACTER = "-"
