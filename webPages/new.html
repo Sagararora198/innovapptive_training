@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.scroll-container {
+  overflow-x: auto;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.content-wrapper {
+  display: flex;
+  
+}
+
+.item {
+  padding: 10px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 10px;
+  background-color: #f5f5f5;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: #ccc;
+}
+
+/* Fading on the right: */
+.content-wrapper:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 200px; /* Adjust based on desired fade width */
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+Fading on the left:
+.content-wrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px; /* Adjust based on desired fade width */
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+
+
+</style>
+<body>
+    <div class="scroll-container">
+        <div class="scroll-bar-wrapper">
+          <div class="scroll-bar"></div>
+        </div>
+        <div class="content-wrapper">
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Biswa kalyan rath tanmay</div>
+          <div class="item">Item 4</div>
+          <div class="item">Imte 5</div>
+          <div class="item">Item 6</div>
+          <div class="item">Item 7</div>
+          <div class="item">Item 8</div>
+          <div class="item">Item 9</div>
+          <div class="item">Item 10</div>
+          <div class="item">Item 11</div>
+          <div class="item">Item 12</div>
+          <div class="item">Item 13</div>
+          <div class="item fade-out">Item N</div>
+        </div>
+      </div>
+      
+      
+</body>
+</html>

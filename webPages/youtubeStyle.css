@@ -1,0 +1,346 @@
+/* common css i want for all the elements to have  */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Roboto, Arial, sans-serif";
+    font-weight: 400;
+    font-size: 10px;
+    color: #F1F1F1;
+    background-color: #0F0F0F;
+    
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(171, 171, 171);
+    
+  }
+  
+
+  
+  ::-webkit-scrollbar-track {
+    background-color: black; 
+  }
+  
+
+  
+
+path {
+    
+    filter: invert(100%);
+}
+.navHeader{
+    display: flex;
+    height: 56px;
+    width: 100%;
+    padding: 0 16px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    
+    
+}
+.navHeader>.navLogoAndHam{
+    height: 56px;
+    width: 169px;
+    display: flex;
+    align-items: center;
+
+}
+.navLogoAndHam>.hamdiv{
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+
+}
+.navLogoAndHam>.logodiv{
+    height: 66px;
+    width: 120px;
+    margin-top: -6px;
+    padding: 17px 13px 18px 12px;
+    display: flex;
+}
+    
+    
+.navSearch{
+    height: 40px;
+    width: 732px;
+    
+}
+.navSearch>.inputAndSearch{
+    height: 40px;
+    width: 640px;
+    margin: 0px 67px 0px 57px;
+    padding: 0px 4px;
+    display: flex;
+    align-items: center;
+}
+.input{
+    
+    height: 31px;
+    width: 515px;
+    border-right: none;
+    border-radius: 40px 0 0 40px;
+    background-color: hsl(0,0%,7%);
+    border: 1px solid hsl(0,0%,18.82%);
+    box-shadow: inset 0 1px 2px hsla(0,0%,0%,0);
+    color: hsla(0,100%,100%,0.88);
+    caret-color: #f1f1f1;
+    font-size: 16px;
+}
+.searchIcon{
+    border-radius: 0 40px 40px 0;
+    cursor: pointer;
+    height: 31px;
+    text-align: center;
+    width: 55px;
+    border: 1px solid hsl(0,0%,18.82%);
+    background-color: #222222;
+    
+
+}
+.micContainer{
+    border-radius: 50%;
+    background-color: #3D3D3D;
+    margin-left: 21px;
+    height: 34px;
+    width: 36px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.voice{
+    
+    
+    border-radius: 50%;
+    background-color: #3D3D3D;
+    font-size: 20px;
+    
+
+}
+
+.navProfile{
+    display: flex;
+    justify-content: space-around;
+    width: 135px;
+    margin-right: 31px;
+    margin-top: -13px;
+}
+
+
+
+/* left body  */
+
+.container{
+    display: flex;
+    
+}
+
+
+.leftAside{
+    height: 100%;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+.leftbar{
+    display: flex;
+    justify-content: space-between;
+    width: 83px;
+    height: 40px;
+    margin-left: 17px;
+    align-items: center;
+}
+.text{
+    font-size: 14px;
+    color: #F1F1F1;
+    margin-top:2px
+    
+}
+
+
+.SubscriptionBar>.text{
+    margin-left: 20px;
+}
+
+.homeBar{
+    color: #F1F1F1;
+    background-color: #F1F1;
+    width: 144px;
+    justify-content: start;
+    border-radius: 8px;
+}
+.homeBar .text{
+    background-color: transparent;
+    margin-left: 24px;
+}
+.homeBar .logo{
+    background-color: transparent;
+}
+
+.division{
+    border:none;
+    border-top: 1px solid  #8c8b8b;
+    margin-top: 13px;
+}
+
+.youbar{
+    display: flex;
+    margin-left: 21px;
+    margin-top: 19px;
+}
+
+.youbar>.text{
+    font-weight: 900;
+    font-size: 15px;
+
+}
+
+.yourChannelBar , .myVideos , .showmorebar {
+    width: 122px;
+    
+}
+.subscriptions{
+    margin-bottom: 10px;
+}
+
+.yourChannelBar>.text{
+    margin-left: 20px;
+    
+}
+.historyBar>.text{
+    margin-right: -6px;
+}
+.myVideos>.text{
+    margin-left: 23px;
+    margin-right: 5px;
+}
+.showmorebar>.text{
+    margin-left: 23px;
+    margin-right: 8px;
+}
+
+/* main body  */
+
+/* main body navbar  */
+
+
+.mainbody{
+    padding-left: 12px;
+    display: flex;
+    flex-direction: column;
+}
+.mainnav{
+    width: 1100px;
+    margin-left: 12px;
+    height: 56px;
+    display: flex;
+    margin-top: 13px;
+    justify-content: space-between;
+}
+/* .mainnav:after {
+    content: "";
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height:56px ;
+    width: 200px; 
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  } */
+.items{
+    width: 49.47px;
+    height: 31px;
+    max-width: 100%;
+    min-width: 0;
+    background-color: #3F3F3F;
+    border-radius: 9px;
+    display: flex;
+    min-width: 40.47px;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    overflow: hidden;
+    
+
+
+}
+.selected{
+    background-color: white;
+}
+.selected>.itemstext{
+    color: black;
+    background-color: transparent;
+}
+.items:hover{
+    cursor: pointer;
+}
+
+/* .overflow{
+    width: 131px;
+} */
+
+.items>div{
+    background-color: #3F3F3F;
+    min-width: 0;
+    max-width: 100%;
+    font-size: 14px;
+     overflow: hidden;
+    /* text-overflow: ellipsis; */
+     white-space: nowrap; 
+
+    
+
+}
+.mainvideos{
+    width: 1119px;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+}
+.rowboxes{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+}
+.videobox{
+    display: flex;
+    flex-direction: column;
+
+}
+.video>img{
+    width: 352px;
+    height: 229px;
+    border-radius: 12px;
+    margin-right: 10px;
+}
+
+.videotextandmore{
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+
+
+.videotext{
+    display: flex;
+    width: 221px;
+    justify-content: space-between;
+
+}
+.description{
+    font-size: 15px;
+}

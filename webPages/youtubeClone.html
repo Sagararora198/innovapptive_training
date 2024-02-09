@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css"
+        integrity="sha512-dUOcWaHA4sUKJgO7lxAQ0ugZiWjiDraYNeNJeRKGOIpEq4vroj1DpKcS3jP0K4Js4v6bXk31AAxAxaYt3Oi9xw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="youtubeStyle.css">
+    <link rel="shortcut icon" href="./images/youtube.svg" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+</head>
+
+<body>
+
+    <!-- header  -->
+    <header class="navHeader">
+        <div class="navLogoAndHam">
+            <div class="hamdiv">
+                <div class="ham material-icons">menu</div>
+            </div>
+            <div class="logodiv">
+                <img src="./images/n.png" alt="youtube">
+
+            </div>
+        </div>
+        <div class="navSearch">
+            <div class="inputAndSearch">
+                <input class="input" type="text" placeholder="     Search">
+                <div class="searchIcon material-icons">search</div>
+                <div class="micContainer">
+                    <div class="voice material-icons">mic</div>
+                </div>
+            </div>
+        </div>
+        <div class="navProfile">
+            <div class="videocall material-symbols-outlined">video_call</div>
+            <div class="bellicon material-icons">notifications</div>
+            <div class="profile material-symbols-outlined">account_circle</div>
+        </div>
+    </header>
+
+    <!-- left body  -->
+    <div class="container">
+
+        <aside class="leftAside">
+
+            <div class="homeBar leftbar">
+                <div class="logo material-icons">home</div>
+                <div class="text">Home</div>
+            </div>
+            <div class="ShortsBar leftbar">
+                <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                        focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;">
+                        <path
+                            d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z">
+                        </path>
+                    </svg></div>
+                <div class="text">Shorts</div>
+            </div>
+            <div class="SubscriptionBar leftbar">
+                <div class="logo material-icons">subscriptions</div>
+                <div class="text">Subscription</div>
+            </div>
+            <hr class="division" />
+
+            <div class="youbar">
+                <div class="text">You</div>
+                <div class="logo material-icons">chevron_right</div>
+            </div>
+
+
+            <div class="yourChannelBar leftbar">
+                <div class="logo material-icons">account_box
+
+                </div>
+                <div class="text">Your Channel</div>
+            </div>
+            <div class="historyBar leftbar">
+                <div class="logo material-symbols-outlined">history
+                </div>
+                <div class="text">History</div>
+            </div>
+            <div class="myVideos leftbar">
+                <div class="logo material-symbols-outlined">smart_display</div>
+                <div class="text">Your Videos</div>
+            </div>
+            <div class="showmorebar leftbar">
+                <div class="logo material-symbols-outlined">expand_more</div>
+                <div class="text">Show More</div>
+            </div>
+
+            <hr class="division" />
+
+            <div class="youbar subscriptions">
+                <div class="text">Subscriptions</div>
+                <!-- <div class="logo material-icons">chevron_right</div> -->
+            </div>
+
+
+            <div class="yourChannelBar leftbar">
+                <div class="logo material-icons">account_box
+
+                </div>
+                <div class="text">Your Channel</div>
+            </div>
+            <div class="historyBar leftbar">
+                <div class="logo material-symbols-outlined">history
+                </div>
+                <div class="text">History</div>
+            </div>
+            <div class="myVideos leftbar">
+                <div class="logo material-symbols-outlined">smart_display</div>
+                <div class="text">Your Videos</div>
+            </div>
+            <div class="showmorebar leftbar">
+                <div class="logo material-symbols-outlined">expand_more</div>
+                <div class="text">Show More</div>
+            </div>
+        </aside>
+
+
+        <!-- main body  -->
+
+        <main class="mainbody">
+            <div class="mainnav">
+                <div class="items selected">
+                    <div class="itemstext">All</div>
+                </div>
+                <div class="items">
+                    <div class="itemstext">Live</div>
+                </div>
+                <div class="items">
+                    <div class="itemstext">Gaming</div>
+                </div>
+                <div class="items overflow">
+                    <div class="itemstext">Biswa Kalyan Rath</div>
+                </div>
+                <div class="items">
+                    <div class="itemstext">Music</div>
+                </div>
+                <div class="items overflow">
+                    <div class="itemstext ">Tanamy Bhat</div>
+                </div>
+                <div class="items">
+                    <div class="itemstext">Dramedy</div>
+                </div>
+                <div class="items">
+                    <div class="itemstext">Mixes</div>
+                </div>
+                <div class="items">
+                    <div class="itemstext">Apple</div>
+                </div>
+                <div class="items">
+                    <div class="itemstext">Universe</div>
+                </div>
+                <div class="items overflow">
+                    <div class="itemstext ">Film Criticisms</div>
+                </div>
+                <div class="items">
+                    <div class="itemstext">Trailers</div>
+                </div>
+                <div class="items overflow">
+                    <div class="itemstext ">Sketch commedy</div>
+                </div>
+
+
+            </div>
+
+            <div class="mainvideos">
+                <div class="rowboxes">
+                    <div class="videobox">
+                        <div class="video">
+                            <img src="./images/915-536x354.jpg" alt="">
+                        </div>
+                        <div class="videotextandmore">
+                            <div class="videotext">
+                                <div class="profilelogo material-symbols-outlined">account_circle</div>
+                                <div class="description">This video is very interesting</div>
+                            </div>
+                            <div class="videomore material-symbols-outlined">more_vert</div>
+                        </div>
+                    </div>
+                    <div class="videobox">
+                        <div class="video">
+                            <img src="./images/1018-536x354.jpg" alt="">
+                        </div>
+                        <div class="videotextandmore">
+                            <div class="videotext">
+                                <div class="profilelogo material-symbols-outlined">account_circle</div>
+                                <div class="description">This video is very interesting</div>
+                            </div>
+                            <div class="videomore material-symbols-outlined">more_vert</div>
+                        </div>
+                    </div>
+                    <div class="videobox">
+                        <div class="video">
+                            <img src="./images/384-536x354.jpg" alt="">
+                        </div>
+                        <div class="videotextandmore">
+                            <div class="videotext">
+                                <div class="profilelogo material-symbols-outlined">account_circle</div>
+                                <div class="description">This video is very interesting</div>
+                            </div>
+                            <div class="videomore material-symbols-outlined">more_vert</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowboxes">
+                    <div class="videobox">
+                        <div class="video">
+                            <img src="./images/1038-536x354.jpg" alt="">
+                        </div>
+                        <div class="videotextandmore">
+                            <div class="videotext">
+                                <div class="profilelogo material-symbols-outlined">account_circle</div>
+                                <div class="description">This video is very interesting</div>
+                            </div>
+                            <div class="videomore material-symbols-outlined">more_vert</div>
+                        </div>
+                    </div>
+                    <div class="videobox">
+                        <div class="video">
+                            <img src="./images/995-536x354.jpg" alt="">
+                        </div>
+                        <div class="videotextandmore">
+                            <div class="videotext">
+                                <div class="profilelogo material-symbols-outlined">account_circle</div>
+                                <div class="description">This video is very interesting</div>
+                            </div>
+                            <div class="videomore material-symbols-outlined">more_vert</div>
+                        </div>
+                    </div>
+                    <div class="videobox">
+                        <div class="video">
+                            <img src="./images/384-536x354.jpg" alt="">
+                        </div>
+                        <div class="videotextandmore">
+                            <div class="videotext">
+                                <div class="profilelogo material-symbols-outlined">account_circle</div>
+                                <div class="description">This video is very interesting</div>
+                            </div>
+                            <div class="videomore material-symbols-outlined">more_vert</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowboxes">
+                    <div class="videobox">
+                        <div class="video">
+                            <img src="./images/915-536x354.jpg" alt="">
+                        </div>
+                        <div class="videotextandmore">
+                            <div class="videotext">
+                                <div class="profilelogo material-symbols-outlined">account_circle</div>
+                                <div class="description">This video is very interesting</div>
+                            </div>
+                            <div class="videomore material-symbols-outlined">more_vert</div>
+                        </div>
+                    </div>
+                    <div class="videobox">
+                        <div class="video">
+                            <img src="./images/1018-536x354.jpg" alt="">
+                        </div>
+                        <div class="videotextandmore">
+                            <div class="videotext">
+                                <div class="profilelogo material-symbols-outlined">account_circle</div>
+                                <div class="description">This video is very interesting</div>
+                            </div>
+                            <div class="videomore material-symbols-outlined">more_vert</div>
+                        </div>
+                    </div>
+                    <div class="videobox">
+                        <div class="video">
+                            <img src="./images/384-536x354.jpg" alt="">
+                        </div>
+                        <div class="videotextandmore">
+                            <div class="videotext">
+                                <div class="profilelogo material-symbols-outlined">account_circle</div>
+                                <div class="description">This video is very interesting</div>
+                            </div>
+                            <div class="videomore material-symbols-outlined">more_vert</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+
+</body>
+
+</html>
