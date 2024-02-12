@@ -72,4 +72,7 @@ grid
 input one array of any length 
 another array of size 2 or 3 
 return arithmatic operations 
+------------------------------------------------------
+09/02/2024
+
  

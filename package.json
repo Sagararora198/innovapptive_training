@@ -1,0 +1,13 @@
+{
+  "name": "database.js",
+  "version": "1.0.0",
+  "description": "This repo will have the notes and program of all the stuff which will br provided and trained to us by aspire infolabs .",
+  "main": "database.js",
+  "type":"module",
+  "scripts": {
+    "dev":"node database.js", 
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

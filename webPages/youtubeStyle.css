@@ -37,11 +37,13 @@ path {
     display: flex;
     height: 56px;
     width: 100%;
-    padding: 0 16px;
+    padding: 0px 16px;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
-    
+    position: fixed;
+    top: 0px;
+    z-index: 3;
     
 }
 .navHeader>.navLogoAndHam{
@@ -148,7 +150,8 @@ path {
     width: 240px;
     display: flex;
     flex-direction: column;
-
+    position: absolute;
+    top: 71px;
     
 }
 
@@ -240,12 +243,16 @@ path {
     flex-direction: column;
 }
 .mainnav{
-    width: 1100px;
+    width: 1114px;
     margin-left: 12px;
     height: 56px;
     display: flex;
     margin-top: 13px;
     justify-content: space-between;
+    position: fixed;
+    top: 43px;
+    z-index: 3;
+    left: 219px;
 }
 /* .mainnav:after {
     content: "";
@@ -308,6 +315,10 @@ path {
     display: flex;
     flex-direction: column;
     padding-top: 12px;
+    position: relative;
+    top: 112px;
+    z-index: 1;
+    left: 223px;
 }
 .rowboxes{
     display: flex;
