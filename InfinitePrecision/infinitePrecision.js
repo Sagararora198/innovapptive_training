@@ -11,6 +11,9 @@ class InfiniteNumber {
 	constructor(inputObject) {
 
 		if (typeof inputObject === "number") {
+			if(inputObject===NaN){
+				return new Error("Not a valid number")
+			}
 			if (inputObject % 1 != 0) {
 				return new Error("Only integers are allowed")
 			}
@@ -29,11 +32,6 @@ class InfiniteNumber {
 			}
 
 			// deep copy 
-			
-			// console.log("You sent a number")
-			
-			// TODO validate the number and only then initialize the _internalArray
-			
 			// initialize the member array
 			this._internalArray = [...tempArray]
 			
@@ -43,30 +41,33 @@ class InfiniteNumber {
 
 			// TODO validate the String and only then initialize the _internalArray
 			let tempArray = []
-			if(parseFloat(inputObject)===NaN){
-				return new Error("Only number string are allowed")
-			}
-			else if((parseFloat(inputObject))%1!=0){
-				return new Error("Only integer are allowed")
-			}
-			else{
-				if(parseInt(inputObject)==0){
-					tempArray = [0]
+			
+				let numberPattern = /^[0-9]+$/
+			  if (numberPattern.test(inputObject)==false) {
+					return new Error("Value other then integer are not allowed")
 				}
-				else{
-					inputObject = parseInt(inputObject)
-
-					while (inputObject != 0) {
-						tempArray.unshift((inputObject % 10))
-						inputObject = inputObject / 10
+				if((parseFloat(inputObject))%1!=0){
+						return new Error("Only integer are allowed")
 					}
-			}
+				else{
+						if(parseInt(inputObject)==0){
+							tempArray = [0]
+						}
+						else{
+							inputObject = parseInt(inputObject)
+		
+							while (inputObject != 0) {
+								tempArray.push((inputObject % 10))
+								inputObject = inputObject / 10
+							}
+					}
+				}
 
-			}
+			
 			// initialize the member array
 			this._internalArray = [...tempArray]
 
-
+				
 		
 
 		} else if (typeof inputObject === "object") {  
@@ -89,6 +90,9 @@ class InfiniteNumber {
 				this._internalArray = [...inputObject]
 			}
 			else{
+				if(inputObject==null){
+					return new Error("Null passed")
+				}
 				let tempArray = []
 				for (const key in inputObject) {
 					if (Object.hasOwnProperty.call(object, key)) {
@@ -141,12 +145,9 @@ class InfiniteNumber {
 	 */
 	getNumberAsString() {
 		// TODO, concatenate the contents of _internalArray to a string and return
-		let currentArray = this.getInternalArray()
-		numberString = ""
-		for (const i of currentArray ) {
-			numberString +=i
-		}
-		return numberString
+		
+		return this._internalArray.join('')
 	}
+
 
 }
