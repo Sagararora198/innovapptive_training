@@ -117,8 +117,8 @@ class InfiniteNumber {
 			// initialize the member array
 			
 
-		} else {        // BHAI KYA KAR RAHA HAI?
-			console.log("You sent some bullshit!")
+		} else {        
+			
 
 			throw new Error(`Constuctor of IniniteNumber does not support this data`
 				+ ` type ${typeof inputObject}`)
@@ -132,6 +132,7 @@ class InfiniteNumber {
 	 */
 	getInternalArray() {
 		// TODO
+		return this._internalArray
 	}
 
 	/** Helper method to return the representation of this Infinite Precision
@@ -140,6 +141,12 @@ class InfiniteNumber {
 	 */
 	getNumberAsString() {
 		// TODO, concatenate the contents of _internalArray to a string and return
+		let currentArray = this.getInternalArray()
+		numberString = ""
+		for (const i of currentArray ) {
+			numberString +=i
+		}
+		return numberString
 	}
 
 }
