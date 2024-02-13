@@ -1,5 +1,5 @@
 /* Class-based implementation of an infinite precision Integer. */
-
+//equals function and all other function to integrate here
 class InfiniteNumber {
 
 	/** An internal member Array to contain the digits of the Infinite Integer.
