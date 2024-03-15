@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL with Query Parameters</title>
+</head>
+<body>
+    <label for="urlInput">URL:</label>
+    <input type="text" id="urlInput" placeholder="Enter URL">
+
+    <label for="queryParamsInput">Query Parameters:</label>
+    <input type="text" id="queryParamsInput" placeholder="Enter query parameters">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlInput = document.getElementById('urlInput');
+            const queryParamsInput = document.getElementById('queryParamsInput');
+
+            queryParamsInput.addEventListener('input', function () {
+                const queryParams = this.value.trim();
+
+                // Check if the URL already contains a query string
+                if (urlInput.value.includes('?')) {
+                    // Remove existing query parameters
+                    const urlWithoutParams = urlInput.value.split('?')[0];
+                    // Update the URL input with the combined URL and new query parameters
+                    urlInput.value = urlWithoutParams + '?' + queryParams;
+                } else {
+                    // If no existing query string, simply append the new query parameters
+                    urlInput.value = urlInput.value.trim() + '?' + queryParams;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

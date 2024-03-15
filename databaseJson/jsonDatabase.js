@@ -151,7 +151,7 @@ class Database {
         // check if table already exist
         try {
             await fs.access(currentTablePath)
-            console.log(`Table ${nameOfTable} already exist`);
+            // console.log(`Table ${nameOfTable} already exist`);
         }
         catch (error) {
             if (error.code === 'ENOENT') {
@@ -167,6 +167,11 @@ class Database {
         }
 
     }
+    
+
+
+        
+  
 
     /** Crete record 
      * @param {String} contentOfRecord Record you want to enter in database 
@@ -255,7 +260,8 @@ class Database {
         try {
             const data = JSON.parse(await fs.readFile(pathOfTable, 'utf-8'))
             if(Object.prototype.hasOwnProperty.call(data, uniqueKey)){
-                console.log(data[uniqueKey]);
+                // console.log(data[uniqueKey]);
+                return data[uniqueKey]
             }
         }
         catch (err) {
@@ -282,8 +288,8 @@ class Database {
             for (const i in data) {
                 if (Object.hasOwnProperty.call(data, i)) {
                     const element = data[i];
-
-                    console.log(element);
+                    return element
+                    // console.log(element);
                     
                 }
             }
@@ -385,7 +391,7 @@ class Database {
      * @param {String} tableName name of the table
      */
     async deleteTable(tableName) {
-        const pathOfTable = `${this.databasePath}/${tableName}.txt`
+        const pathOfTable = `${this.databasePath}/${tableName}.json`
         try {
             await fs.unlink(pathOfTable)
             console.log('table deleted successfully');
@@ -425,18 +431,18 @@ class Database {
             await this.createTable("newTable");
 
             // Create records
-            await this.createRecord({ "name": 'sagar' }, 2);
-            await this.createRecord({"name": "asdf"}, 3);
-            await this.createRecord({"name": "vbnm"}, 4);
+            await this.createRecord({ "name": 'sagar',"age":22,"location":"Hyderabad" }, 2);
+            await this.createRecord({ "name": 'pranay',"age":21,"location":"Hyderabad" }, 1);
+            // await this.createRecord({ "name": 'asfdf',"age":35,"location":"Hyderabad" }, 3);
 
             // Update a record
-            await this.updateRecord(2, { "name": "kunal" });
+            // await this.updateRecord(3,{ "age":25 });
 
             // Read all records
-            // await this.readAllRecords();
+            await this.readAllRecords();
 
             // Read a specific record
-            // await this.readRecords(2);
+            await this.readRecords(2);
 
             // Delete a record
             // await this.deleteRecord(2);
@@ -465,8 +471,8 @@ class Database {
 
 
 
-let testObj = new Database()
-testObj.performTestOperations()
+// let testObj = new Database()
+// testObj.performTestOperations()
 
 
 
@@ -503,3 +509,5 @@ testObj.performTestOperations()
 
 // newObj.useDatabase("Test")
 // .then(()=>newObj.createTable("testTable"))
+
+export default Database

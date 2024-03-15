@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThunderClient</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="index.js"></script>    
+</head>
+
+<body>
+
+    <header class="mainHeader">
+        <div class="requestParameterBox">
+            <div class="requestType">
+                <div class="requestText">GET</div>
+                <div class="requestOptions material-symbols-outlined">expand_more</div>
+            </div>
+            <div class="requestUrl">
+                <input type="text"  class="inputUrl" id="urlInput">
+            </div>
+            <button class="sendRequest" onclick="handleSend()">Send</button>
+        </div>
+        <div class="requestBodyOptions">
+            <div class="options">
+                <div class="requestTest">Query</div>
+                <div class="outine"><hr color="#0078D4"></div>
+            </div>
+            <div class="options">
+                <div class="requestTest">Headers</div>
+                <div class="outine"></div>
+            </div>
+            <div class="options">
+                <div class="requestTest">Auth</div>
+                <div class="outine"></div>
+            </div>
+            <div class="options">
+                <div class="requestTest">Body</div>
+                <div class="outine"></div>
+            </div>
+            <div class="options">
+                <div class="requestTest">Tests</div>
+                <div class="outine"></div>
+            </div>
+            <div class="options">
+                <div class="requestTest">Pre Run</div>
+                <div class="outine"></div>
+            </div>
+        </div>
+        <hr class="separator">
+        <div class="queryParameter">Query Parameters</div>
+        <div class="ParamsListBox">
+            <div class="parameters">
+                
+                <input type="checkbox" class="checkbox">
+                <input type="text" placeholder="parameter"  class="key" id="inp">
+                <input type="text" placeholder="value" class="value" id="valueinp">
+            </div>
+            <div class="parameters">
+                
+                <input type="checkbox" class="checkbox">
+                <input type="text" placeholder="parameter" name="key" class="key">
+                <input type="text" placeholder="value" name="value" class="value">
+            </div>
+        </div>
+    </header>
+
+    <div class="bottomBody">
+        <hr class="requestResponseSeparator ">
+        <div class="responseheader">
+            <div class="responseheaderText">
+                Status:
+            </div>
+            <div class="responseheaderText">
+                Size:
+            </div>
+            <div class="responseheaderText">
+                Time:
+            </div>
+        </div>
+        <div class="requestBodyOptions">
+            <div class="options">
+                <div class="requestTest">Response</div>
+                <div class="outine"><hr color="#0078D4"></div>
+            </div>
+            <div class="options">
+                <div class="requestTest">Headers</div>
+                <div class="outine"></div>
+            </div>
+            <div class="options">
+                <div class="requestTest">Cookies</div>
+                <div class="outine"></div>
+            </div>
+            <div class="options">
+                <div class="requestTest">Results</div>
+                <div class="outine"></div>
+            </div>
+            <div class="options">
+                <div class="requestTest">Docs</div>
+                <div class="outine"></div>
+            </div>
+
+        </div>
+        <hr class="separator optionsSeparator ">
+        <div class="responseOutput">
+
+            <textarea class="response" rows="5"></textarea>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

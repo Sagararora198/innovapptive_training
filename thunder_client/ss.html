@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Parameters Dynamically</title>
+    <style>
+        /* Add your styles here */
+        .ParamsListBox {
+            /* Add styles for the container if needed */
+        }
+
+        .parameters {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .checkbox, .key, .value, .addButton {
+            /* Add styles for each parameter if needed */
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="ParamsListBox">
+        <!-- Initial parameter with addButton -->
+        <div class="parameters">
+            <div class="checkbox">Checkbox</div>
+            <div class="key">Key</div>
+            <div class="value">Value</div>
+            <div class="addButton" onclick="addParameter()">Add Parameter</div>
+        </div>
+    </div>
+
+    <script>
+        function addParameter() {
+            const paramsListBox = document.querySelector('.ParamsListBox');
+
+            // Remove the button from the previous last parameters div
+            const lastParametersDiv = paramsListBox.lastElementChild;
+            const addButton = lastParametersDiv.querySelector('.addButton');
+            if (addButton) {
+                lastParametersDiv.removeChild(addButton);
+            }
+
+            // Create new parameter elements
+            const newParameter = document.createElement('div');
+            newParameter.classList.add('parameters');
+
+            const checkbox = document.createElement('div');
+            checkbox.classList.add('checkbox');
+            checkbox.textContent = 'New Checkbox';
+
+            const key = document.createElement('div');
+            key.classList.add('key');
+            key.textContent = 'New Key';
+
+            const value = document.createElement('div');
+            value.classList.add('value');
+            value.textContent = 'New Value';
+
+            const newAddButton = document.createElement('div');
+            newAddButton.classList.add('addButton');
+            newAddButton.textContent = 'Add Parameter';
+            newAddButton.onclick = addParameter;
+
+            // Append elements to the new parameter div
+            newParameter.appendChild(checkbox);
+            newParameter.appendChild(key);
+            newParameter.appendChild(value);
+            newParameter.appendChild(newAddButton);
+            
+            // Append the new parameter div to the container
+            paramsListBox.appendChild(newParameter);
+        }
+    </script>
+</body>
+</html>
